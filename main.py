@@ -13,7 +13,7 @@ df_sample = pd.read_parquet('movies_dataset_reduced_sample.parquet')
 
 @app.get("/")
 def read_root():
-    return {"message": "Hola Mundo"}
+    return {"message": "Proyecto Final por Jeison Zapata"}
 
 @app.get("/cantidad_filmaciones_mes/{mes}")
 def cantidad_filmaciones_mes(mes: str):
