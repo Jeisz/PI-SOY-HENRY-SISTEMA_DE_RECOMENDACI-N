@@ -1,5 +1,5 @@
-<a href="https://github.com/user-attachments/assets/b2b36da3-6d2d-4424-b78b-2998c4e3bf9d">
-    <img src="https://github.com/user-attachments/assets/b2b36da3-6d2d-4424-b78b-2998c4e3bf9d" alt="Proyecto de Recomendación de Películas">
+<a href="https://github.com/user-attachments/assets/5d6e9107-fb3d-44a1-878e-30c37d6699d5">
+    <img src="https://github.com/user-attachments/assets/5d6e9107-fb3d-44a1-878e-30c37d6699d5" alt="Proyecto de Recomendación de Películas" width="600">
 </a>
 
 # Sistema de Recomendación de Películas con FastAPI
