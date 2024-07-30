@@ -25,6 +25,7 @@ Eliminación de Valores Nulos en Fechas: Se eliminaron los registros con valores
 Formato de Fechas: release_date se convirtió al formato AAAA-mm-dd y se creó la columna release_year.
 Cálculo de Retorno de Inversión: Se añadió la columna return calculando revenue / budget, reemplazando valores nulos con 0.
 Eliminación de Columnas No Utilizadas: Se eliminaron columnas innecesarias como video, imdb_id, adult, original_title, poster_path, y homepage.
+Este apartado lo encontraremos en los archivos de ETL del presente repositorio en los cuales se explica de manera detallada el proceso de extracción y limpieza hecho posteriormente a la evaluación de las variables mediante un EDA inicial. 
 Desarrollo de la API
 Se desarrolló una API usando FastAPI con los siguientes endpoints:
 
@@ -37,7 +38,23 @@ get_director(nombre_director: str): Devuelve el éxito de un director medido a t
 recomendacion(titulo: str): Devuelve una lista de 5 películas similares a la ingresada utilizando TfidfVectorizer y cosine_similarity.
 Sistema de Recomendación
 El sistema de recomendación se basa en la similitud de títulos utilizando TfidfVectorizer y cosine_similarity. Este enfoque permite calcular la similitud entre los títulos de las películas y recomendar las más similares.
+# Analisis EDA
+<div align="center">
+    <a href="https://github.com/user-attachments/assets/d34a35cc-4c77-4180-9d45-b346a92c814b">
+        <img src="https://github.com/user-attachments/assets/d34a35cc-4c77-4180-9d45-b346a92c814b" alt="Gráfica pi" width="800">
+    </a>
+</div>
+a gráfica muestra la cantidad de filmaciones (películas) estrenadas por mes, basada en los datos procesados y transformados del conjunto de datos que utilizamos en el proyecto. Cada barra representa un mes del año, con la altura de la barra indicando el número total de películas estrenadas durante ese mes.
 
+Enero tiene el mayor número de filmaciones, con aproximadamente 6000 películas estrenadas.
+Febrero muestra una disminución significativa con cerca de 3000 filmaciones.
+Los meses de Marzo a Junio tienen una cantidad similar de filmaciones, alrededor de 3000 a 4000.
+Julio muestra una ligera caída en comparación con los meses anteriores.
+Agosto y Septiembre tienen un repunte, especialmente Septiembre, con un número elevado de estrenos.
+Octubre tiene un número considerable de estrenos, aunque ligeramente menor que septiembre.
+Noviembre y Diciembre muestran un descenso en la cantidad de filmaciones, siendo noviembre el mes con menos estrenos del trimestre final.
+Esta distribución puede indicar patrones estacionales en la industria cinematográfica, con picos en ciertos meses debido a festividades, vacaciones o estrategias de lanzamiento de las películas.
+En base a este tipo de analisis se procede a desarrollar la función con FastApi 
 Despliegue
 La API se desplegó en Render para que pueda ser consumida desde la web.
 
