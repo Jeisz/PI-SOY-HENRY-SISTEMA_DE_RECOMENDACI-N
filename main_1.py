@@ -1,13 +1,16 @@
 from fastapi import FastAPI, HTTPException
 import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
 app = FastAPI()
 
 # Cargar el dataset (asegúrate de ajustar el path según tu archivo)
 df_combines = pd.read_parquet('movies_dataset.parquet')
-# Cargar el dataset del modelo de recomendación
-df_sample = pd.read_parquet('movies_dataset_reduced_sample.parquet')
+
+# Reducir el dataset a los títulos necesarios para la recomendación
+df_sample = df_combines[['title']].dropna().reset_index(drop=True)
 
 # Diccionarios de mapeo para meses y días
 meses = {
@@ -113,3 +116,24 @@ def get_director(nombre_director: str):
     else:
         return {"message": "Director no encontrado o no tiene suficientes participaciones"}
 
+@app.get("/recomendacion/{titulo}")
+def recomendacion(titulo: str):
+    tfidf_vectorizer = TfidfVectorizer(stop_words='english')
+    tfidf_matrix = tfidf_vectorizer.fit_transform(df_sample['title'])
+
+    # Calcular la similitud de coseno entre todas las películas
+    cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
+    
+    # Obtener el índice de la película que coincide con el título
+    idx = df_sample[df_sample['title'].str.contains(titulo, case=False, na=False)].index[0]
+    
+    # Obtener los índices de las películas con la mayor similitud
+    sim_scores = list(enumerate(cosine_sim[idx]))
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    sim_scores = sim_scores[1:6]  # Obtener las 5 más similares
+    
+    # Obtener los títulos de las películas más similares
+    movie_indices = [i[0] for i in sim_scores]
+    similar_movies = df_sample['title'].iloc[movie_indices]
+    
+    return {"recommendations": similar_movies.tolist()}
