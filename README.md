@@ -44,7 +44,7 @@ El sistema de recomendación se basa en la similitud de títulos utilizando Tfid
         <img src="https://github.com/user-attachments/assets/d34a35cc-4c77-4180-9d45-b346a92c814b" alt="Gráfica pi" width="800">
     </a>
 </div>
-a gráfica muestra la cantidad de filmaciones (películas) estrenadas por mes, basada en los datos procesados y transformados del conjunto de datos que utilizamos en el proyecto. Cada barra representa un mes del año, con la altura de la barra indicando el número total de películas estrenadas durante ese mes.
+La gráfica muestra la cantidad de filmaciones (películas) estrenadas por mes, basada en los datos procesados y transformados del conjunto de datos que utilizamos en el proyecto. Cada barra representa un mes del año, con la altura de la barra indicando el número total de películas estrenadas durante ese mes.
 
 Enero tiene el mayor número de filmaciones, con aproximadamente 6000 películas estrenadas.
 Febrero muestra una disminución significativa con cerca de 3000 filmaciones.
