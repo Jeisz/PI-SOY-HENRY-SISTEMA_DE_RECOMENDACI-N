@@ -1,5 +1,5 @@
-<a href="https://www.canva.com/design/DAGMc9l1rXM/_wXAFNOkvJgRPqRLGOxlJQ/edit?utm_content=DAGMc9l1rXM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
-    <img src="https://www.canva.com/design/DAGMc9l1rXM/_wXAFNOkvJgRPqRLGOxlJQ/edit?utm_content=DAGMc9l1rXM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" alt="Proyecto de Recomendación de Películas">
+<a href="https://github.com/user-attachments/assets/b2b36da3-6d2d-4424-b78b-2998c4e3bf9d">
+    <img src="https://github.com/user-attachments/assets/b2b36da3-6d2d-4424-b78b-2998c4e3bf9d" alt="Proyecto de Recomendación de Películas">
 </a>
 
 # Sistema de Recomendación de Películas con FastAPI
