@@ -20,6 +20,9 @@ dias_semana = {
     "viernes": 4, "sábado": 5, "domingo": 6
 }
 
+# Convertir las fechas en el dataframe al cargarlo
+df_combines['release_date'] = pd.to_datetime(df_combines['release_date'], errors='coerce')
+
 @app.get("/")
 def read_root():
     return {"message": "Hola Mundo"}
@@ -31,7 +34,7 @@ def cantidad_filmaciones_mes(mes: str):
         raise HTTPException(status_code=400, detail="Mes inválido")
     
     mes_num = meses[mes]
-    df_combines['mes'] = pd.to_datetime(df_combines['release_date']).dt.month
+    df_combines['mes'] = df_combines['release_date'].dt.month
     cantidad = df_combines[(df_combines['status'] == 'Released') & (df_combines['mes'] == mes_num)].shape[0]
     return {"message": f"{cantidad} películas fueron estrenadas en el mes de {mes.capitalize()}"}
 
@@ -42,7 +45,7 @@ def cantidad_filmaciones_dia(dia: str):
         raise HTTPException(status_code=400, detail="Día de la semana inválido")
     
     dia_num = dias_semana[dia]
-    df_combines['dia_semana'] = pd.to_datetime(df_combines['release_date']).dt.dayofweek
+    df_combines['dia_semana'] = df_combines['release_date'].dt.dayofweek
     cantidad = df_combines[(df_combines['status'] == 'Released') & (df_combines['dia_semana'] == dia_num)].shape[0]
     return {"message": f"{cantidad} películas fueron estrenadas en los días {dia.capitalize()}"}
 
@@ -51,7 +54,11 @@ def score_titulo(titulo_de_la_filmacion: str):
     film = df_combines[df_combines['title'].str.contains(titulo_de_la_filmacion, case=False, na=False)]
     if not film.empty:
         film = film.iloc[0]
-        return {"message": f"La película {film['title']} fue estrenada en el año {film['release_date'].year} con un score/popularidad de {film['popularity']}"}
+        if pd.notna(film['release_date']):
+            anio = film['release_date'].year
+            return {"message": f"La película {film['title']} fue estrenada en el año {anio} con un score/popularidad de {film['popularity']}"}
+        else:
+            return {"message": f"La película {film['title']} tiene una fecha de lanzamiento inválida con un score/popularidad de {film['popularity']}"}
     else:
         raise HTTPException(status_code=404, detail="Película no encontrada")
 
@@ -61,7 +68,11 @@ def votos_titulo(titulo_de_la_filmacion: str):
     if not film.empty:
         film = film.iloc[0]
         if film['vote_count'] >= 2000:
-            return {"message": f"La película {film['title']} fue estrenada en el año {film['release_date'].year}. La misma cuenta con un total de {film['vote_count']} valoraciones, con un promedio de {film['vote_average']}"}
+            if pd.notna(film['release_date']):
+                anio = film['release_date'].year
+                return {"message": f"La película {film['title']} fue estrenada en el año {anio}. La misma cuenta con un total de {film['vote_count']} valoraciones, con un promedio de {film['vote_average']}"}
+            else:
+                return {"message": f"La película {film['title']} tiene una fecha de lanzamiento inválida. La misma cuenta con un total de {film['vote_count']} valoraciones, con un promedio de {film['vote_average']}"}
         else:
             return {"message": "La película no cumple con la condición de tener al menos 2000 valoraciones"}
     else:
@@ -101,5 +112,4 @@ def get_director(nombre_director: str):
         }
     else:
         return {"message": "Director no encontrado o no tiene suficientes participaciones"}
-
 
