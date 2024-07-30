@@ -8,7 +8,14 @@
 # Sistema de Recomendación de Películas con FastAPI
 Descripción del Proyecto
 Contexto
-Trabajas como Data Scientist en una start-up de servicios de agregación de plataformas de streaming. El objetivo es desarrollar un sistema de recomendación de películas desde cero, que incluye la limpieza de datos y el despliegue de una API para recomendaciones de películas.
+Trabajas como Data Scientist en una start-up de servicios de agregación de plataformas de streaming. El objetivo es desarrollar un sistema de recomendación de películas desde cero, que incluye la limpieza de datos y el despliegue de una API para recomendaciones de películas. Si alguna vez han interactuado con la plataforma Netflix , este proyecto nos mostrara como podemos relaciónar diferentes titulos con coincidencias similares. 
+
+<div align="center">
+    <a href="https://github.com/user-attachments/assets/68c4ff66-d869-4bdc-9c73-0b984949a897">
+        <img src="https://github.com/user-attachments/assets/68c4ff66-d869-4bdc-9c73-0b984949a897" alt="Pelis" width="1000" height="500">
+    </a>
+</div>
+
 
 Objetivo
 El objetivo principal es crear un flujo de trabajo eficiente que incluya la recopilación y transformación de datos, análisis exploratorio, desarrollo de modelos y su implementación utilizando prácticas de MLOps.
