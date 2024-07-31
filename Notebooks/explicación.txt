@@ -1,0 +1,17 @@
+1. cantidad_filmaciones_mes(mes: str)
+Esta función cuenta la cantidad de películas estrenadas en un mes específico, proporcionado en español. Utiliza el campo release_date del dataset para extraer el mes y filtrar las películas estrenadas en ese período.
+
+2. cantidad_filmaciones_dia(dia: str)
+Esta función cuenta la cantidad de películas estrenadas en un día específico de la semana, también proporcionado en español. Utiliza el campo release_date para extraer el día de la semana y filtrar las películas.
+
+3. score_titulo(titulo_de_la_filmacion: str)
+Esta función busca una película por su título, devuelve el título exacto, el año de estreno y la popularidad (score). Utiliza coincidencias flexibles en el campo title del dataset para encontrar la película.
+
+4. votos_titulo(titulo_de_la_filmacion: str)
+Busca una película por título y verifica si tiene al menos 2000 valoraciones. Si cumple, devuelve el título, año de estreno, número de valoraciones y promedio de votos. Utiliza coincidencias flexibles y filtra por el número de valoraciones.
+
+5. get_actor(nombre_actor: str)
+Busca películas en las que un actor específico ha participado. Devuelve la cantidad de películas y el retorno promedio de estas. Separa el campo cast en una lista y filtra por el nombre del actor.
+
+6. get_director(nombre_director: str)
+Busca películas dirigidas por un director específico. Devuelve la cantidad de películas, el retorno total y promedio, junto con detalles de cada película (título, fecha de lanzamiento, costo y ganancia). Filtra directamente por el nombre del director en el campo director.
