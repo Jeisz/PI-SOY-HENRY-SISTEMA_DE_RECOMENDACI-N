@@ -75,7 +75,7 @@ Análisis de Preferencias: Proporciona información valiosa sobre las preferenci
 
 <div align="center">
     <a href="https://github.com/user-attachments/assets/2a763cef-1378-4e91-a9ea-03aa29bd4798">
-        <img src="https://github.com/user-attachments/assets/2a763cef-1378-4e91-a9ea-03aa29bd4798" alt="Toy Story" width="800">
+        <img src="https://github.com/user-attachments/assets/2a763cef-1378-4e91-a9ea-03aa29bd4798" alt="Toy Story" width="500">
     </a>
 </div>
 
