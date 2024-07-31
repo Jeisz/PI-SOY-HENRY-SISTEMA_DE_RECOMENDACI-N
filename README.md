@@ -65,6 +65,20 @@ En base a este tipo de analisis se procede a desarrollar la función con FastApi
 Despliegue
 La API se desplegó en Render para que pueda ser consumida desde la web.
 
+Un sistema de recomendación de películas es una herramienta que sugiere películas a los usuarios basándose en sus preferencias y comportamientos previos. Estos sistemas son esenciales en plataformas de streaming para mejorar la experiencia del usuario, incrementando la satisfacción y el engagement. Los principales beneficios de un sistema de recomendación de películas incluyen:
+
+Personalización: Ofrece recomendaciones personalizadas a cada usuario, lo que aumenta la relevancia del contenido sugerido.
+Descubrimiento de Contenido: Ayuda a los usuarios a descubrir nuevas películas que de otra manera no encontrarían.
+Retención de Usuarios: Mantiene a los usuarios interesados y comprometidos, lo que puede reducir la tasa de abandono.
+Incremento de Visualizaciones: Al sugerir contenido que es probable que le guste al usuario, se incrementa el tiempo de visualización y el uso de la plataforma.
+Análisis de Preferencias: Proporciona información valiosa sobre las preferencias y tendencias de los usuarios, lo que puede ser útil para la estrategia de contenido y marketing, por ejemplo si yo voy a ver Toy Story la popular pelicula de Disney Pixar puedo nuevas producciones en base a nuestro sistema de recomentación. 
+
+<div align="center">
+    <a href="https://github.com/user-attachments/assets/2a763cef-1378-4e91-a9ea-03aa29bd4798">
+        <img src="https://github.com/user-attachments/assets/2a763cef-1378-4e91-a9ea-03aa29bd4798" alt="Toy Story" width="800">
+    </a>
+</div>
+
 Instalación
 Para instalar y ejecutar el proyecto localmente:
 
@@ -82,5 +96,10 @@ Contribución
 Para contribuir al proyecto, abre un issue primero para discutir los cambios que deseas realizar. Las contribuciones son bienvenidas.
 
 Licencia
-Este proyecto está bajo la Licencia MIT.
+Este proyecto está bajo la Licencia y nombre de Jeison Stiven Zapata Pinzón.
+<div align="center">
+    <a href="https://github.com/user-attachments/assets/404fc7e4-33a0-4ace-946c-d428b54eb519">
+        <img src="https://github.com/user-attachments/assets/404fc7e4-33a0-4ace-946c-d428b54eb519" alt="Green and Pink Aesthetic Page Border Doubled Sided Poster" width="800">
+    </a>
+</div>
 
